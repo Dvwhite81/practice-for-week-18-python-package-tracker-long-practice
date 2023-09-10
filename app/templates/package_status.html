@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{{ url_for('.new_package') }}"></a>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Sender</th>
+                <th>Recipient</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for package in packages %}
+            <tr>
+                <td>{{ package.id }}</td>
+                <td>{{ package.sender }}</td>
+                <td>{{ package.recipient }}</td>
+                <td>{{ package.origin }}</td>
+                <td>{{ package.destination }}</td>
+                <td>{{ package.location }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+</div>
+
+{% endblock content %}
